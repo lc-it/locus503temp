@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex">
+    <title>系統維護中 - 樂迦再生科技股份有限公司</title>
+    <link rel="shortcut icon" href="locus-cell.ico" type="image/x-icon" />
+    <style>
+        *, *::before, *::after { box-sizing: border-box; }
+
+        html, body {
+            margin: 0;
+            padding: 0;
+            min-height: 100%;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "PingFang TC",
+                         "Microsoft JhengHei", "Noto Sans TC", "Segoe UI",
+                         Helvetica, Arial, sans-serif;
+            font-weight: 300;
+            color: #010202;
+            background-color: #fafafa;
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        a { color: inherit; text-decoration: none; }
+        ul { list-style: none; padding: 0; margin: 0; }
+        img { max-width: 100%; height: auto; display: block; }
+
+        /* ---------- Header ---------- */
+        header {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 99;
+            height: 92px;
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px);
+        }
+
+        .header__inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 100%;
+            padding: 0 1.5rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            max-width: 320px;
+        }
+
+        .logo img { width: 100%; }
+
+        .nav {
+            display: flex;
+            gap: 1.8rem;
+        }
+
+        .nav li {
+            font-size: .95rem;
+            color: #010202;
+            letter-spacing: 1px;
+            cursor: default;
+            line-height: 1.3;
+        }
+
+        @media (max-width: 768px) {
+            header { height: 70px; }
+            .header__inner { padding: 0 1rem; }
+            .logo { max-width: 220px; }
+            .nav { display: none; }
+        }
+
+        /* ---------- Main / Maintenance ---------- */
+        main {
+            flex: 1;
+            padding-top: 92px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .maintenance {
+            max-width: 720px;
+            width: 100%;
+            padding: 4rem 1.5rem;
+            text-align: center;
+        }
+
+        .maintenance__icon {
+            color: #2ea0a4;
+            margin-bottom: 1.5rem;
+            display: inline-flex;
+        }
+
+        .maintenance__icon svg {
+            width: 72px;
+            height: 72px;
+        }
+
+        .maintenance__title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #010202;
+            margin: 0 0 .75rem 0;
+            letter-spacing: 3px;
+        }
+
+        .maintenance__subtitle {
+            font-size: 1rem;
+            color: #2ea0a4;
+            font-weight: 600;
+            margin: 0 0 2.5rem 0;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .maintenance__message {
+            font-size: 1.05rem;
+            color: #333;
+            line-height: 2;
+            margin: 0 0 2rem 0;
+        }
+
+        .maintenance__message p { margin: .25rem 0; }
+
+        .maintenance__contact {
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #efefef;
+            font-size: .95rem;
+            color: #555;
+            line-height: 1.9;
+        }
+
+        .maintenance__contact strong {
+            color: #2ea0a4;
+            font-weight: 700;
+            margin-right: .4rem;
+        }
+
+        @media (max-width: 768px) {
+            main { padding-top: 70px; }
+            .maintenance { padding: 2.5rem 1rem; }
+            .maintenance__title { font-size: 1.5rem; letter-spacing: 2px; }
+            .maintenance__icon svg { width: 56px; height: 56px; }
+        }
+
+        /* ---------- Footer ---------- */
+        footer {
+            background-color: #ffffff;
+            border-top: 1px solid #efefef;
+        }
+
+        .footer__inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            padding: 2rem 1.5rem;
+        }
+
+        .footer__logo {
+            flex: 0 0 30%;
+            max-width: 320px;
+        }
+
+        .footer__info {
+            flex: 1;
+            min-width: 280px;
+        }
+
+        .footer__links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem 2rem;
+            padding: 0 0 1.5rem 0;
+        }
+
+        .footer__links li {
+            font-weight: 700;
+            color: #010202;
+            display: flex;
+            align-items: center;
+            gap: .35rem;
+            cursor: default;
+        }
+
+        .footer__links .arrow {
+            color: #2ea0a4;
+            font-weight: 900;
+        }
+
+        .footer__contact {
+            padding-top: 1.5rem;
+            border-top: 1px solid #333;
+        }
+
+        .footer__contact li {
+            margin: .5rem 0;
+            font-size: .95rem;
+        }
+
+        .footer__contact strong {
+            color: #2ea0a4;
+            font-weight: 700;
+            margin-right: .4rem;
+        }
+
+        .copyright {
+            text-align: left;
+            padding: 1rem 1.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            font-size: .85rem;
+            color: #555;
+            border-top: 1px solid #efefef;
+        }
+
+        @media (max-width: 768px) {
+            .footer__inner {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+            .footer__logo { max-width: 260px; }
+            .footer__links { justify-content: center; }
+            .footer__contact { border-top: none; }
+            .copyright { text-align: center; }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="header__inner">
+            <div class="logo">
+                <img src="locus-logo.png" alt="樂迦再生科技" />
+            </div>
+            <nav>
+                <ul class="nav">
+                    <li>關於樂迦再生</li>
+                    <li>最新消息</li>
+                    <li>經營團隊</li>
+                    <li>建廠進度</li>
+                    <li>投資人專區</li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="maintenance">
+            <div class="maintenance__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                     stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M14.7 6.3a4 4 0 0 1 5 5l-9.4 9.4a2 2 0 0 1-2.8-2.8l9.4-9.4a2 2 0 0 0-2.8-2.8L9.5 9.3"></path>
+                    <path d="M3 21l3-3"></path>
+                    <path d="M5 13a4 4 0 1 1 6 6"></path>
+                </svg>
+            </div>
+            <h1 class="maintenance__title">系統維護中</h1>
+            <p class="maintenance__subtitle">Site Under Maintenance</p>
+            <div class="maintenance__message">
+                <p>親愛的訪客您好，</p>
+                <p>因樂迦再生科技進行機房轉移作業，目前網站暫時無法提供服務。</p>
+                <p>造成您的不便，敬請見諒，我們將盡速恢復網站運作。</p>
+                <p>感謝您的耐心等候。</p>
+            </div>
+            <div class="maintenance__contact">
+                <p>如有緊急需求，歡迎透過以下方式聯繫我們：</p>
+                <p><strong>Telephone：</strong>+886-2-2697-2560</p>
+                <p><strong>Email：</strong>contact-us@locus-cell.com</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer__inner">
+            <div class="footer__logo">
+                <img src="locus-logo.png" alt="樂迦再生科技" />
+            </div>
+            <div class="footer__info">
+                <ul class="footer__links">
+                    <li><span class="arrow">&rsaquo;</span>關於樂迦再生</li>
+                    <li><span class="arrow">&rsaquo;</span>最新消息</li>
+                    <li><span class="arrow">&rsaquo;</span>經營團隊</li>
+                    <li><span class="arrow">&rsaquo;</span>投資人專區</li>
+                </ul>
+                <ul class="footer__contact">
+                    <li><strong>Address:</strong>新北市汐止區新台五路一段97號19樓之12</li>
+                    <li><strong>Telephone:</strong>+886-2-2697-2560</li>
+                    <li><strong>Email:</strong>contact-us@locus-cell.com</li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy;2026 樂迦再生科技股份有限公司. All Rights Reserved</p>
+        </div>
+    </footer>
+</body>
+</html>
